@@ -1,0 +1,108 @@
+.section { padding: 100px 0; background: var(--bg-alt); }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+.timeline {
+  position: relative;
+  padding-left: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cyan) 0%, transparent 100%);
+}
+
+.item { position: relative; }
+.dot {
+  position: absolute;
+  left: -30px; top: 8px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  border: 2px solid var(--text-dim);
+  transition: all 0.3s;
+}
+.dotActive {
+  border-color: var(--cyan);
+  background: var(--cyan);
+  box-shadow: 0 0 12px rgba(0,212,255,0.55);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  transition: all 0.3s;
+}
+.card:hover {
+  border-color: var(--border-strong);
+  transform: translateX(4px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.company { font-size: 1.05rem; font-weight: 700; }
+.role {
+  display: block;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+.period {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  background: var(--bg);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.periodActive {
+  background: rgba(0,212,255,0.08) !important;
+  color: var(--cyan) !important;
+  border-color: var(--border-strong) !important;
+}
+
+.tasks { display: flex; flex-direction: column; gap: 7px; }
+.tasks li {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.55;
+}
+.tasks li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-size: 0.72rem;
+}
+
+.badge {
+  margin-top: 14px;
+  padding: 9px 14px;
+  background: rgba(0,212,255,0.06);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: 8px;
+  font-size: 0.83rem;
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .header { flex-direction: column; gap: 6px; }
+  .card { padding: 18px 16px; }
+}
