@@ -6,6 +6,7 @@ export const profile = {
   email: 'tlsdhsk543@naver.com',
   phone: '010-6269-1896',
   github: 'wcshin543',
+  linkedin: 'https://www.linkedin.com/in/%EC%99%84%EC%B2%A0-%EC%8B%A0-1673443a7/',
   location: '서울시 강서구',
   summary: 'Thales Luna HSM 및 PSE 장비 전문 기술지원 엔지니어. 금융·공공·방산·교통 분야 고객사에서 HSM 신규 구축·운영·DR·장애 대응·PSE2→PSE3 마이그레이션까지 전주기 기술지원 수행.',
   stats: [
@@ -168,6 +169,23 @@ export const projects = [
     period: '2025.06 ~ 2025.08',
     items: ['신규 구축 기술지원 및 성능테스트 지원'],
     chips: ['Luna HSM', '성능테스트'],
+  },
+];
+
+export const education = [
+  {
+    school: '국민대학교',
+    major: '사회학과',
+    degree: '학사',
+    period: '2013.03 ~ 2019.02',
+    detail: '학점 3.37 / 4.5 · 서울 주간',
+  },
+  {
+    school: '평내고등학교',
+    major: '문과계열',
+    degree: '졸업',
+    period: '~ 2013.02',
+    detail: '',
   },
 ];
 

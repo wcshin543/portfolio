@@ -102,7 +102,65 @@
   font-weight: 500;
 }
 
+.eduTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 56px 0 20px;
+  color: var(--text);
+}
+
+.eduGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eduCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  transition: border-color 0.25s;
+}
+.eduCard:hover { border-color: var(--border-strong); }
+
+.eduHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.eduSchool {
+  display: block;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.eduMajor {
+  font-size: 0.85rem;
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.eduPeriod {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.eduDetail {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
 @media (max-width: 640px) {
   .header { flex-direction: column; gap: 6px; }
   .card { padding: 18px 16px; }
+  .eduHeader { flex-direction: column; gap: 4px; }
 }

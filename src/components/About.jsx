@@ -56,6 +56,7 @@ export default function About() {
               <div className={styles.infoItem}><span>🏢</span><span>㈜아도스트 보안기술팀</span></div>
               <div className={styles.infoItem}><span>📧</span><a href="mailto:tlsdhsk543@naver.com">tlsdhsk543@naver.com</a></div>
               <div className={styles.infoItem}><span>🔗</span><a href="https://github.com/wcshin543" target="_blank" rel="noopener">github.com/wcshin543</a></div>
+              <div className={styles.infoItem}><span>💼</span><a href="https://www.linkedin.com/in/%EC%99%84%EC%B2%A0-%EC%8B%A0-1673443a7/" target="_blank" rel="noopener">LinkedIn 프로필</a></div>
             </div>
           </FadeIn>
         </div>

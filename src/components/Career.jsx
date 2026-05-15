@@ -1,5 +1,5 @@
 import { FadeIn, SectionTitle } from './Section';
-import { careers } from '../data/portfolio';
+import { careers, education } from '../data/portfolio';
 import styles from './Career.module.css';
 
 export default function Career() {
@@ -31,6 +31,24 @@ export default function Career() {
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.1}>
+          <h3 className={styles.eduTitle}>🎓 학력</h3>
+          <div className={styles.eduGrid}>
+            {education.map((e, i) => (
+              <div key={i} className={styles.eduCard}>
+                <div className={styles.eduHeader}>
+                  <div>
+                    <span className={styles.eduSchool}>{e.school}</span>
+                    <span className={styles.eduMajor}>{e.major} · {e.degree}</span>
+                  </div>
+                  <span className={styles.eduPeriod}>{e.period}</span>
+                </div>
+                {e.detail && <p className={styles.eduDetail}>{e.detail}</p>}
+              </div>
+            ))}
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
