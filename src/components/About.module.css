@@ -21,7 +21,7 @@
   overflow: hidden;
 }
 .photo svg { width: 76px; opacity: 0.35; }
-.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 72% top; }
 
 .badge {
   position: absolute;
