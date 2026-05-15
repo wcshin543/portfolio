@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FadeIn, SectionTitle } from './Section';
 import styles from './About.module.css';
 
@@ -9,6 +10,8 @@ const competencies = [
 ];
 
 export default function About() {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <section id="about" className={styles.section}>
       <div className={styles.container}>
@@ -16,11 +19,15 @@ export default function About() {
         <div className={styles.grid}>
           <FadeIn>
             <div className={styles.photoFrame}>
-              <div className={styles.photo} id="profilePhotoSlot">
-                <svg viewBox="0 0 100 100" fill="none">
-                  <circle cx="50" cy="38" r="20" stroke="#00d4ff" strokeWidth="2"/>
-                  <path d="M15 90c0-19.33 15.67-35 35-35s35 15.67 35 35" stroke="#00d4ff" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
+              <div className={styles.photo}>
+                {!imgError ? (
+                  <img src="/profile.jpg" alt="신완철" onError={() => setImgError(true)} />
+                ) : (
+                  <svg viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="38" r="20" stroke="#00d4ff" strokeWidth="2"/>
+                    <path d="M15 90c0-19.33 15.67-35 35-35s35 15.67 35 35" stroke="#00d4ff" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                )}
               </div>
               <div className={styles.badge}>
                 <span>Thales Certified</span>
