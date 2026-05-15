@@ -3,23 +3,10 @@ import { motion } from 'framer-motion';
 import { profile } from '../data/portfolio';
 import styles from './Hero.module.css';
 
-function useTypewriter(texts) {
-  const [display, setDisplay] = useState('');
-  const [idx, setIdx] = useState(0);
-  const [charIdx, setCharIdx] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = texts[idx];
-    let delay = deleting ? 40 : 80;
-    if (!deleting && charIdx > current.length) { delay = 2200; setDeleting(true); }
-    else if (deleting && charIdx < 0) { setDeleting(false); setCharIdx(0); setIdx(i => (i + 1) % texts.length); return; }
-    const t = setTimeout(() => { setDisplay(current.substring(0, charIdx)); setCharIdx(c => deleting ? c - 1 : c + 1); }, delay);
-    return () => clearTimeout(t);
-  }, [charIdx, deleting, idx, texts]);
-
-  return display;
-}
+const roleLines = [
+  'HSM 기술지원 엔지니어  ·  IT 보안 인프라 전문가',
+  'Thales Luna HSM Professional  ·  PSE 마이그레이션 전문가',
+];
 
 function useCounter(target, start) {
   const [val, setVal] = useState(0);
@@ -49,7 +36,6 @@ const badges = [
 
 export default function Hero() {
   const canvasRef = useRef(null);
-  const typed = useTypewriter(profile.typewriterTexts);
   const [statsStarted, setStatsStarted] = useState(false);
   const statsRef = useRef(null);
   const [imgError, setImgError] = useState(false);
@@ -123,10 +109,13 @@ export default function Hero() {
 
           <motion.div className={styles.roleWrap}
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-            <span className={styles.bracket}>[ </span>
-            <span className={styles.typed}>{typed}</span>
-            <span className={styles.cursor}>|</span>
-            <span className={styles.bracket}> ]</span>
+            {roleLines.map((line, i) => (
+              <div key={i} className={styles.roleLine}>
+                <span className={styles.bracket}>[ </span>
+                <span className={styles.typed}>{line}</span>
+                <span className={styles.bracket}> ]</span>
+              </div>
+            ))}
           </motion.div>
 
           <motion.p className={styles.desc}
